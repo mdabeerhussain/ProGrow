@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="io.github.teamprodigy.progrow" versionCode="10" version="1.0.0">
+    <name>ProGrow</name>
+    <description>
+        Control your ProGrow Agrobot with this simple application!
+    </description>
+    <author href="http://teamprodigy.github.io/" email="abeer.rumc@gmail.com">
+        Team Prodigy
+    </author>
+    <content src="index.html" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="icon.png" width="180" height="180" />
+    </platform>
+    <preference name="Fullscreen" value="true" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+</widget>

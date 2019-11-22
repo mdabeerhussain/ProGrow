@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>ProGrow</title>
+    <script>
+        function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  if(h > 12){
+    h = h - 12;
+  }
+  document.getElementById('txt').innerHTML =
+  h + " : " + m + " : " + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+    </script>
+    <script src="js/chart.js"></script>
+</head>
+
+<body onload="startTime()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mr-auto" style="background-color: #43a047!important;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logow.svg" width="120" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0px">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff!important;">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron" style="border-radius: 0px;">
+        <div class="container">
+            <h1 class="display-4" style="font-size: 2rem;">Hello, Tausif!</h1>
+            <p>Your current location is <b>Plot 15, Block B, Kuril - NSU Road, Dhaka - 1229</b>. <br>
+                Current Time: <b><span id="txt"></span></b><br></p>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Weather Now</h1><br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">29° C</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Current Temperature</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">55%</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Humidity</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">0%</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Precipitation</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">5 km/h</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Wind Speed</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <h1 class="text-center">Realtime Field Data</h1>
+        <p class="lead text-center">Last Reading Taken: 3 Minutes Ago</p><br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">82%</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Soil Moisture</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">0 ppm</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Presence of CO</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">0 ppm</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Presence of Other Gases</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">1 atm</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Atmospheric Pressure</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Current Position</h1><span class="badge badge-secondary">Enter Field Co-ordinates</span>
+                <div class="mapouter" style="margin-top: 20px">
+                    <div class="gmap_canvas"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.1006542670066!2d90.42379992557161!3d23.81501955439659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c64c103a8093%3A0xd660a4f50365294a!2sNorth%20South%20University!5e0!3m2!1sen!2sbd!4v1574355308959!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+                    <style>
+                        .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 300px;
+                        width: 100%;
+                    }
+
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 300px;
+                        width: 100%;
+                    }
+                    </style>
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 20px;">
+                <h1>Important Contacts</h1>
+                <ul class="list-group" style="margin-top: 50px">
+                    <li class="list-group-item d-flex justify-content-between align-items-center active" style="background-color: #43a047; border-color: #43a047">
+                        Contacts of Nearby Agricultural Offices
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Office 1
+                        <span class="badge badge-primary badge-pill">01797480188</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Office 2
+                        <span class="badge badge-primary badge-pill">01758502327</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Office 3
+                        <span class="badge badge-primary badge-pill">01758502327</span>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 40px;">Chat With An Agricultural Expert <span class="badge badge-danger"> Offline</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Recent Data From Your Field</h1>
+                <p class="lead text-center">Average Reading From Last 5 Days</p>
+                <table class="table table-bordered table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Temperature</th>
+                            <th scope="col">Humidity</th>
+                            <th scope="col">Soil Moisture</th>
+                            <th scope="col">Presence of Carbon Monoxide</th>
+                            <th scope="col">Presence of Other Gases</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">21-11-2019</th>
+                            <td>33° C</td>
+                            <td>82%</td>
+                            <td>62%</td>
+                            <td>0.00 ppm</td>
+                            <td>0.01 ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">20-11-2019</th>
+                            <td>29° C</td>
+                            <td>77%</td>
+                            <td>66%</td>
+                            <td>0.00 ppm</td>
+                            <td>0.00 ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">19-11-2019</th>
+                            <td>31° C</td>
+                            <td>56%</td>
+                            <td>74%</td>
+                            <td>0.001 ppm</td>
+                            <td>0.00 ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">18-11-2019</th>
+                            <td>29° C</td>
+                            <td>89%</td>
+                            <td>79%</td>
+                            <td>0.001 ppm</td>
+                            <td>0.01 ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">17-11-2019</th>
+                            <td>32° C</td>
+                            <td>72%</td>
+                            <td>88%</td>
+                            <td>0.00 ppm</td>
+                            <td>0.00 ppm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Recent Temperature</h2>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h2>Recent Humidity</h2>
+                <canvas id="myChart3"></canvas>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-12">
+                <h4>Recent Soil Moisture</h4>
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <h1 class="text-center">Personalized Suggestions</h1>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-md-6">
+                <h4>Things To Implement</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Your soil moisture is decreasing. Irrigate in 2 days.</li>
+                    <li class="list-group-item">Nitrogen deficiency has been seen. Apply fertilizer.</li>
+                </ul>
+            </div>
+            <div class="col-md-6" style="margin-top: 20px; margin-bottom: 20px;">
+                <h4>Try Buying</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#" style="color: #43a047">TSP</a></li>
+                    <li class="list-group-item"><a href="#" style="color: #43a047">Urea</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+    Chart.defaults.global.defaultFontFamily = "'Roboto', sans-serif";
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['21-11', '20-11', '19-11', '18-11', '17-11'],
+            datasets: [{
+                label: 'Recent Temperature',
+                backgroundColor: 'rgba(67, 160, 71, 0.2)',
+                borderColor: 'rgb(67, 160, 71)',
+                data: [33, 29, 31, 29, 32, 25, 50]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+    </script>
+    <script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['21-11', '20-11', '19-11', '18-11', '17-11'],
+            datasets: [{
+                label: 'Recent Soil Moisture',
+                backgroundColor: 'rgba(67, 160, 71, 0.2)',
+                borderColor: 'rgb(67, 160, 71)',
+                data: [82, 77, 74, 79, 88, 60, 100]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+    </script>
+    <script>
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['21-11', '20-11', '19-11', '18-11', '17-11'],
+            datasets: [{
+                label: 'Recent Humidity',
+                backgroundColor: 'rgba(67, 160, 71, 0.2)',
+                borderColor: 'rgb(67, 160, 71)',
+                data: [82, 77, 56, 89, 72, 60, 100]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

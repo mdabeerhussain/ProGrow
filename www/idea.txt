@@ -1,0 +1,10 @@
+//current position in map
+//co-ordinates entering form 
+//real time data
+	suggestions 
+//chat with expert 
+//phone number 
+	buying decisions
+//current weather
+//recent data
+//graph

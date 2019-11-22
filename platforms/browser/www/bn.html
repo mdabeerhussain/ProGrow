@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
+    <title>ProGrow</title>
+	<style>
+		body{
+			font-family: 'Hind Siliguri', sans-serif!important;
+		}
+	</style>
+    <script>
+        function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  if(h > 12){
+    h = h - 12;
+  }
+  document.getElementById('txt').innerHTML =
+  h + " : " + m + " : " + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body onload="startTime()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mr-auto">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.svg" width="120" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">হোম <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            rahim2235
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">প্রোগ্রো সেটিংস্‌ </a>
+                            <a class="dropdown-item" href="#">আমার অ্যাকাউন্ট</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">লগ আউট</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron" style="background-color: #27AE60; color: white; border-radius: 0px;">
+        <div class="container">
+            <h1 class="display-4" style="font-size: 3rem;">স্বাগতম, রহিম মিয়া!</h1>
+            <p>আপনার বর্তমান অবস্থান <b>বেগম রোকেয়া সরণী, ঢাকা ১২০৭</b>. <br>
+                বর্তমান সময়: <b><span id="txt"></span></b><br></p>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">বর্তমান আবহাওয়া</h1><br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">২৯° C</h5> 
+                        <h6 class="card-subtitle mb-2 text-muted">বর্তমান তাপমাত্রা</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">৫৫%</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">আদ্রতা</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">০%</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">শিশির</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">৫ কি.মি./ঘণ্টা</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">বাতাসের গতি</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <h1 class="text-center">এই মুহূর্তের তথ্য উপাত্ত</h1>
+        <p class="lead text-center">সর্বশেষ আপডেট: ৩ মিনিট আগে</p><br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">৮২%</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">মাটির আদ্রতা</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">০ ppm</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">কার্বন মনোক্সাইডের পরিমাণ</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">০ ppm</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">অন্য গ্যাসের পরিমাণ</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">১ atm</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">বায়ুমণ্ডলীয় চাপ</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>বর্তমান অবস্থান</h1><span class="badge badge-secondary">মাঠের স্থানাঙ্ক দিন</span>
+                <div class="mapouter" style="margin-top: 20px">
+                    <div class="gmap_canvas"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.387440508804!2d90.37938911450249!3d23.769213893975312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c75125f8e4f7%3A0xf7b9edc3b8747c3a!2sBangabandhu%20International%20Conference%20Center!5e0!3m2!1sen!2sbd!4v1571078775978!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+                    <style>
+                        .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 300px;
+                        width: 100%;
+                    }
+
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 300px;
+                        width: 100%;
+                    }
+                    </style>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>গুরুত্বপূর্ণ যোগাযোগ</h1>
+                <ul class="list-group" style="margin-top: 50px">
+                    <li class="list-group-item d-flex justify-content-between align-items-center active" style="background-color: #27AE60; border-color: #27AE60">
+                        নিকটস্থ কৃষি অফিসারের নম্বর
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        অফিস ১
+                        <span class="badge badge-primary badge-pill">০১২৩৪৫৬৭৮৯০</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        অফিস ২
+                        <span class="badge badge-primary badge-pill">০১২৩৪৫৬৭৮৯১</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        অফিস ৩ 
+                        <span class="badge badge-primary badge-pill">০১২৩৪৫৬৭৮৯২</span>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 40px;">কৃষিবিদের সাথে কথা বলুন <span class="badge badge-danger"> অফলাইন</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">আপনার মাঠের তথ্য</h1>
+                <p class="lead text-center">গত ৫ দিনের গড় রিডিং</p>
+                <table class="table table-bordered table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">তাপমাত্রা</th>
+                            <th scope="col">আদ্রতা</th>
+                            <th scope="col">মাটির আদ্রতা</th>
+                            <th scope="col">কার্বন মনোক্সাইডের পরিমাণ</th>
+                            <th scope="col">অন্য গ্যাসের পরিমাণ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">২০-০৯-২০১৯</th>
+                            <td>৩৩° C</td>
+                            <td>৮২%</td>
+                            <td>৬২%</td>
+                            <td>০.০০ ppm</td>
+                            <td>০.০১ ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">১৯-০৯-২০১৯</th>
+                            <td>২৯° C</td>
+                            <td>৭৭%</td>
+                            <td>৬৬%</td>
+                            <td>০.০০ ppm</td>
+                            <td>০.০০ ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">১৮-০৯-২০১৯</th>
+                            <td>৩১° C</td>
+                            <td>৫৬%</td>
+                            <td>৭৪%</td>
+                            <td>০.০০১ ppm</td>
+                            <td>০.০০ ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">১৭-০৯-২০১৯</th>
+                            <td>২৯° C</td>
+                            <td>৮৯%</td>
+                            <td>৭৯%</td>
+                            <td>০.০০১ ppm</td>
+                            <td>০.০১ ppm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">১৬-০৯-২০১৯</th>
+                            <td>৩২° C</td>
+                            <td>৭২%</td>
+                            <td>৮৮%</td>
+                            <td>০.০০ ppm</td>
+                            <td>০.০০ ppm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>সাম্প্রতিক তাপমাত্রা</h2>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h2>সাম্প্রতিক আদ্রতা</h2>
+                <canvas id="myChart3"></canvas>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-12">
+                <h4>সাম্প্রতিক মাটির আদ্রতা</h4>
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px">
+        <h1 class="text-center">ব্যাক্তিগত সাজেশন</h1>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-md-6">
+                <h4>যা যা করনীয়</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">আপনার মাটির আদ্রতা কমে যাচ্ছে. ২ দিনে সেচ করুন।</li>
+                    <li class="list-group-item">নাইট্রোজেন এর অভাব দেখা গিয়েছে। প্রয়োজনীয় সার প্রয়োগ করুন।</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4>কিনতে পারেন</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">টিএসপি</a></li>
+                    <li class="list-group-item"><a href="#">ইউরিয়া</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron" style="margin-top: 120px; margin-bottom: 0px">
+        <div class="container">
+            <a href="#">ফেসবুকে টিম প্রডিজি</a>
+            <hr class="my-4">
+            <p>&copy; ২০১৯ প্রোগ্রো, টিম প্রডিজি</p>
+        </div>
+    </div>
+    <script>
+    Chart.defaults.global.defaultFontFamily = "'Poppins', sans-serif";
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['20-09', '19-09', '18-09', '17-09', '16-09'],
+            datasets: [{
+                label: 'Recent Temperature',
+                backgroundColor: 'rgba(39, 174, 96, 0.2)',
+                borderColor: 'rgb(39, 174, 96)',
+                data: [33, 29, 31, 29, 32, 25, 50]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+    </script>
+    <script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['20-09', '19-09', '18-09', '17-09', '16-09'],
+            datasets: [{
+                label: 'Recent Soil Moisture',
+                backgroundColor: 'rgba(39, 174, 96, 0.2)',
+                borderColor: 'rgb(39, 174, 96)',
+                data: [82, 77, 74, 79, 88, 60, 100]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+    </script>
+    <script>
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['20-09', '19-09', '18-09', '17-09', '16-09'],
+            datasets: [{
+                label: 'Recent Humidity',
+                backgroundColor: 'rgba(39, 174, 96, 0.2)',
+                borderColor: 'rgb(39, 174, 96)',
+                data: [82, 77, 56, 89, 72, 60, 100]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
